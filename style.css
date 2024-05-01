@@ -34,7 +34,36 @@
     z-index: 100; 
 }
 
+.surat-keterangan {
+    background-image: url(backdrop.gif);
+    backdrop-filter: blur(20px);
+    width: flex;
+    height: flex;
+    padding: 150px 0;
+    padding-top: 1px;
+    text-align: center;
+    margin: 100px;
+    
+}
 
+.sidebar.active + main .surat-keterangan {
+    display: block; 
+    
+}
+
+.surat-keterangan h1 {
+    font-size: 24px;
+    background-color: #64C7CC;
+    color: #ffffff;
+    font-weight: 800;
+    padding: 10px;
+}
+
+.surat-keterangan p {
+    font-size: 18px;
+    color: #000000a1;
+    margin-top: 10px;
+}
 main {
     margin-left: 0; 
     padding: 20px;
@@ -91,6 +120,7 @@ nav a.active {
     text-align: center;
 }
 
+
 .home::before {
     content: "";
     position: absolute;
@@ -120,6 +150,10 @@ nav a.active {
 .home a {
     text-decoration: none;
     color: white;
+}
+
+.surat-keterangan {
+    padding: 20px;
 }
 
 .skenarioGameContent h1 {
