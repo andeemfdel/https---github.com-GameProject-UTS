@@ -1,27 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
-    padding: 0;
-    margin: 0;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
+
+.sidebar {
+    position: fixed;
+    left: -200px; 
+    top: 0;
+    bottom: 0;
+    width: 200px; 
+    background-color: #0b0726ea;
+    color: #8fb4ff;
+    padding: 20px;
+    transition: left 0.3s; 
+    z-index: 50;
 }
+
+.sidebar.active {
+    left: 0; 
+}
+
+.sidebar.active + main {
+    margin-left: 200px; 
+}
+
+.sidebar-toggle {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 100; 
+}
+
+
+main {
+    margin-left: 0; 
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #191249;
-    
 }
+
 header {
-    position:fixed;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;  
+    padding: 20px 10%;
     background-color: #0b0726ea;
     display: flex;
     justify-content: space-between;
@@ -29,22 +62,25 @@ header {
     overflow-x: hidden;
     z-index: 50;
 }
+
 nav a {
     font-size: 18px;
     color: #8fb4ff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 20px;  
+    margin-left: 20px;
     transition: .3s;
 }
+
 nav a:hover,
 nav a.active {
     color: #8136f1;
 }
+
 .home {
     position: relative;
-    background-image: url("backdrop.gif");   
-    background-size: cover; 
+    background-image: url("backdrop.gif");
+    background-size: cover;
     background-position: center;
     height: 100vh;
     display: flex;
@@ -53,33 +89,38 @@ nav a.active {
     align-items: center;
     color: rgb(80, 43, 92);
     text-align: center;
-}  
+}
+
 .home::before {
-    content: ""; 
-    position: absolute; 
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: rgba(0, 0, 0, 0.8);
 }
+
 .home::before {
-    opacity: 0.2; 
+    opacity: 0.2;
 }
+
 .home h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
     color: #ffffff;
     font-style: oblique;
     text-shadow: 2px 2px;
-}  
-.home p {
-    font-size: 1.
 }
-.home a{
+
+.home p {
+    font-size: 1;
+}
+
+.home a {
     text-decoration: none;
     color: white;
-}    
+}
 
 .skenarioGameContent h1 {
     font-size: 32px;
@@ -96,7 +137,7 @@ nav a.active {
 }
 
 .anggota {
-    background-image:url(backdrop.gif) ;
+    background-image: url(backdrop.gif);
     backdrop-filter: blur(20px);
     width: flex;
     height: flex;
@@ -105,22 +146,25 @@ nav a.active {
     text-align: center;
     margin: 100px;
 }
+
 .anggota h2 {
     font-size: 32px;
     margin-bottom: 50px;
     background-position: center;
     background-color: #0f0a2ec9;
     border: 2px solid #7ea894;
-    border-radius: 0px 0px 20px 20px; 
+    border-radius: 0px 0px 20px 20px;
     color: #ffffff;
     font-weight: 800;
-}   
+}
+
 .anggota-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
 }
+
 .anggota-item {
     width: 200px;
     height: auto;
@@ -132,25 +176,29 @@ nav a.active {
     text-align: center;
     justify-content: center;
 }
+
 .anggota-item:hover {
     transform: translateY(-5px);
-    background-color:rgb(101, 211, 211);
+    background-color: rgb(101, 211, 211);
 }
+
 .anggota-item img {
-    max-width: 100%; 
-    height: 100%; 
+    max-width: 100%;
+    height: 100%;
 }
+
 .aggota-item h3 {
     font-size: 24px;
     margin-bottom: 10px;
 }
+
 .anggota-item p {
     font-size: 16px;
     color: #000000a1;
     margin-bottom: 10px;
 }
 
-.headSkenario{
+.headSkenario {
     width: flex;
     height: flex;
     padding: 10px;
@@ -161,21 +209,23 @@ nav a.active {
     text-align: center;
     justify-content: center;
 }
-li{
+
+li {
     padding: 10px;
 }
-.pSkenario{
+
+.pSkenario {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-
-.gameUlarTangga{
+.gameUlarTangga {
     text-align: flex;
     padding-left: 15px;
     padding-right: 15px;
 }
-.Game{
+
+.Game {
     width: flex;
     height: flex;
     padding: 20px;
@@ -185,22 +235,21 @@ li{
     transition: transform 0.3s ease;
     text-align: center;
     justify-content: center;
-    
-    
 }
 
-.Game a{
+.Game a {
     display: inline-block;
     margin-top: 20px;
 }
 
-.flowchartContent{
+.flowchartContent {
     padding-left: 30%;
     padding-right: 20%;
     text-align: center;
     background-image: url(backdrop.gif);
 }
-.mxgraph{
+
+.mxgraph {
     background-color: white;
 }
 
